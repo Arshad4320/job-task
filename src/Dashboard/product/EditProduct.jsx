@@ -16,13 +16,10 @@ const EditProduct = () => {
   const [updateProduct] = useUpdateProductMutation();
   const { register, handleSubmit, reset, setValue } = useForm();
 
-  const [message, setMessage] = useState("");
-
   useEffect(() => {
     if (productData) {
-      // Pre-fill the form with the product data
       setValue("name", productData.name);
-      setValue("images", productData.images); // You may need to handle images differently depending on your setup
+      setValue("images", productData.images);
       setValue("description", productData.description);
       setValue("stock", productData.stock);
       setValue("price", productData.price);
@@ -33,7 +30,7 @@ const EditProduct = () => {
     try {
       const updatedProduct = {
         ...data,
-        categoryId: Number(data.categoryId), // Make sure categoryId is passed correctly
+        categoryId: Number(data.categoryId),
         stock: Number(data.stock),
         price: Number(data.price),
       };
@@ -52,11 +49,10 @@ const EditProduct = () => {
   }
 
   return (
-    <div className="m-4 lg:m-8">
+    <div className=" lg:m-8">
       <h1 className="text-2xl font-bold mb-4">Edit Product</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Product Name */}
+        <div className="grid grid-cols-1 md:grid-cols-2 ">
           <div>
             <label className="font-medium text-gray-700" htmlFor="name">
               Product Name *
@@ -69,8 +65,6 @@ const EditProduct = () => {
               {...register("name", { required: "Product name is required" })}
             />
           </div>
-
-          {/* Product Images */}
           <div>
             <label className="font-medium text-gray-700" htmlFor="images">
               Product Images *
@@ -87,22 +81,22 @@ const EditProduct = () => {
           </div>
 
           {/* Description */}
-          <div className="col-span-2">
+          <div>
             <label className="font-medium text-gray-700" htmlFor="description">
               Description
             </label>
             <textarea
               id="description"
               placeholder={productData?.data?.description}
-              className="border w-full bg-gray-100 rounded-md px-2  mt-2"
+              className="border w-full bg-gray-100 rounded-md px-2 py-3 mt-2"
               {...register("description")}
             ></textarea>
           </div>
 
           {/* Stock */}
           <div>
-            <label className="font-medium text-secondary" htmlFor="stock">
-              Stock *
+            <label className="font-medium text-gray-700" htmlFor="stock">
+              Stock
             </label>
             <input
               id="stock"

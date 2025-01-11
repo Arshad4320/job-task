@@ -44,11 +44,11 @@ const Product = () => {
             </button>
           ))}
         </div>
-        <div className="grid my-10 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+        <div className="grid py-10 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
           {productItem?.data?.map((item) => {
             return (
               <Link
-                className="shadow-md"
+                className="shadow-md p-2 "
                 key={item?.id}
                 to={`/product/${item.id}`}
               >
@@ -59,7 +59,7 @@ const Product = () => {
                     price={item?.price}
                   />
 
-                  <Button props={"Add To Cart"} />
+                  <Button className={"w-full"} props={"Add To Cart"} />
                 </div>
               </Link>
             );

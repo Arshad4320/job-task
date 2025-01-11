@@ -38,17 +38,13 @@ const MobileNavber = () => {
       >
         <ImBlogger2 className="text-lg" /> Blog
       </Link>
+
       <Link
-        to="/about"
+        to="/dashboard"
         className="flex cursor-pointer items-center gap-2 ml-0.5 mb-2 font-semibold border-b pb-1 border-b-gray-400   hover:text-primary  "
       >
-        <FaAppStore className="text-lg" /> About Us
-      </Link>
-      <Link
-        to="/contact"
-        className="flex cursor-pointer items-center gap-2 ml-0.5 mb-2 font-semibold border-b pb-1 border-b-gray-400   hover:text-primary  "
-      >
-        <FaAppStore className="text-lg" /> Contact Us
+        <FaAppStore className="text-lg" />
+        Dashbord
       </Link>
     </>
   );
@@ -64,17 +60,12 @@ const MobileNavber = () => {
             <RiMenuLine className="text-xl text-primary" />
             <p className="text-lg font-semibold text-primary">Menu</p>
           </button>
-          <p className="text-xl sm:text-2xl font-semibold text-primary">
-            AL MADH BD
-          </p>
+
           <Link className="flex items-center justify-center " to="/">
             {" "}
             <div className=" font-semibold w-[56px] h-[72px]  p-2">
               {/* <img className="w-ful h-full" src={logo} alt="" />{" "} */}
             </div>
-            {/* <p className="text-xl sm:text-2xl font-semibold text-primary">
-              AL MADH BD
-            </p> */}
           </Link>
         </div>
       </div>

@@ -1,102 +1,167 @@
 import React from "react";
+import { IoLocationOutline } from "react-icons/io5";
+import { HiOutlineMail } from "react-icons/hi";
+import { SiWhatsapp } from "react-icons/si";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { FaFacebookF } from "react-icons/fa";
+import { FiYoutube } from "react-icons/fi";
+import { GrInstagram } from "react-icons/gr";
+
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-[#252525] py-6 ">
+    <div className="bg-slate-900 py-6 ">
       <div className="md:max-w-7xl lg:mx-auto mx-5 md:mx-8  mt-14">
-        <div className=" grid  md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+        <div className=" grid  md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
           <div className="">
-            <div>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                58 Howard Street #2 San Francisco
+            <div className="flex flex-col">
+              <p className=" font-semibold text-xl transition duration-500 text-white mb-4">
+                Home
               </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                contact@homeid.com
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                (+68)1221 09876
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                www.homeid.com
-              </p>
-            </div>
-          </div>
-
-          <div className="">
-            <div>
-              <p className=" font-semibold text-xl transition duration-500 text-white mb-2">
-                Popular Searches
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Apartment for Rent
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Apartment Low to hide
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Offices for Buy
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Offices for Rent
-              </p>
-            </div>
-          </div>
-          <div className="">
-            <div>
-              <p className=" font-semibold text-xl transition duration-500 text-white mb-2">
-                Popular Searches
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Apartment for Rent
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Apartment Low to hide
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Offices for Buy
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Offices for Rent
-              </p>
+              <Link
+                to="/"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/shop"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/blog"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Degital Blog
+              </Link>
+              <Link
+                to="/about"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/return-policy"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Returns and Refunds Policy
+              </Link>
             </div>
           </div>
           <div className="">
-            <div>
-              <p className=" font-semibold text-xl transition duration-500 text-white mb-2">
-                Popular Searches
+            <div className="flex flex-col">
+              <p className=" font-semibold text-xl transition duration-500 text-white mb-4">
+                Home
               </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Apartment for Rent
-              </p>
-              <p className="text-gray-400 font-medium transition duration-500 hover:text-white mb-2">
-                Apartment Low to hide
-              </p>
-              <div className="flex mt-4">
-                <input
-                  className="rounded-md rounded-r-none px-1"
-                  type="text"
-                  placeholder="Enter address"
-                />
-                <button className="bg-secondary px-4 lg:px-2 py-3 rounded-l-none rounded-md text-white flex items-center justify-center">
-                  Subscribe
-                </button>
-              </div>
+              <Link
+                to="/"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/shop"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/blog"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Degital Blog
+              </Link>
+              <Link
+                to="/about"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/return-policy"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Returns and Refunds Policy
+              </Link>
             </div>
           </div>
-        </div>
-        <div className="md:flex justify-between md:p-8 mt-10">
-          <div>
-            <span className="text-gray-400 font-medium transition duration-500 hover:text-white">
-              Terms of Use
-            </span>
-            <span className="text-gray-400 font-medium transition duration-500 hover:text-white">
-              {" "}
-              Privacy Policy
-            </span>
+          <div className="">
+            <div className="flex flex-col">
+              <p className=" font-semibold text-xl transition duration-500 text-white mb-4">
+                Home
+              </p>
+              <Link
+                to="/"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/shop"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/blog"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Degital Blog
+              </Link>
+              <Link
+                to="/about"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/return-policy"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Returns and Refunds Policy
+              </Link>
+            </div>
           </div>
-          <p className="text-gray-400 font-medium transition duration-500 hover:text-white">
-            © 2020 homeID. All Rights Reserved
-          </p>
+          <div className="">
+            <div className="flex flex-col">
+              <p className=" font-semibold text-xl transition duration-500 text-white mb-4">
+                Home
+              </p>
+              <Link
+                to="/"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/shop"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/blog"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Degital Blog
+              </Link>
+              <Link
+                to="/about"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/return-policy"
+                className="text-amber-200 font-medium transition duration-500 hover:text-white mb-2"
+              >
+                Returns and Refunds Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
