@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import MobileSideber from "./MobileSidber";
-import DashbordNavbar from "./../../share/Navbar/DashbordNavbar";
+import DashbordNavbar from "../../share/Navbar/DashbordNavbar";
 
-const DashbordLayout = () => {
+const MainLayout = () => {
   const [menuState, setMenuState] = useState(true);
   const [isCollups, setIsCollups] = useState(true);
 
@@ -33,15 +33,8 @@ const DashbordLayout = () => {
           <Outlet />
         </div>
       </div>
-      <h1
-        className={`text-center py-2 text-secondary ${
-          !isCollups ? "hidden" : null
-        }`}
-      >
-        © 2023 almadhbd team. All Rights Reserved
-      </h1>
     </div>
   );
 };
 
-export default DashbordLayout;
+export default MainLayout;

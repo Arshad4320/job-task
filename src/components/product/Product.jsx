@@ -47,7 +47,11 @@ const Product = () => {
         <div className="grid my-10 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
           {productItem?.data?.map((item) => {
             return (
-              <Link key={item?.id} to={`/product/${item.id}`}>
+              <Link
+                className="shadow-md"
+                key={item?.id}
+                to={`/product/${item.id}`}
+              >
                 <div>
                   <ProductCard
                     title={item?.productName}

@@ -19,9 +19,6 @@ const MobileSideber = ({
   const [cuisine, setCuisine] = useState(false);
   const [product, setProduct] = useState(false);
   const [category, setCategory] = useState(false);
-  const [blog, setBlog] = useState(false);
-  const [vidio, setVidio] = useState(false);
-  const [order, setOrder] = useState(false);
 
   const handleClick = () => {
     setIsCollups(!isCollups);
@@ -69,34 +66,7 @@ const MobileSideber = ({
             </div>
           </li>
         </Link>
-        {/* order menu start  */}
-        <li
-          className="mt-2 duration-300 flex justify-between items-center gap-3 hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-          onClick={() => setOrder(!order)}
-        >
-          <div className="flex items-center gap-3">
-            <TbCategory />
-            {!isCollups && <span>Order</span>}
-          </div>
-          {order ? <IoIosArrowDown /> : <IoIosArrowForward />}
-        </li>
-        <div
-          className={`pl-5 transition duration-300  ${
-            order ? "block  duration-300" : "hidden  duration-300"
-          }`}
-        >
-          <Link to="/dashboard/order">
-            <li
-              onClick={handleClick}
-              className="mt-2 flex justify-between items-center hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-            >
-              <div className="flex items-center gap-3">
-                {!isCollups && <span>Order List</span>}
-              </div>
-            </li>
-          </Link>
-        </div>
-        {/* order menu end  */}
+
         <li
           className="mt-2 duration-300 flex justify-between items-center gap-3 hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
           onClick={() => setCuisine(!cuisine)}
@@ -196,82 +166,6 @@ const MobileSideber = ({
           </Link>
         </div>
         {/* category menu end  */}
-        {/* blog menu start  */}
-        <li
-          className="mt-2 duration-300 flex justify-between items-center gap-3 hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-          onClick={() => setBlog(!blog)}
-        >
-          <div className="flex items-center gap-3">
-            <ImBlogger2 />
-            {!isCollups && <span>Blog</span>}
-          </div>
-          {blog ? <IoIosArrowDown /> : <IoIosArrowForward />}
-        </li>
-        <div
-          className={`pl-5 transition duration-300  ${
-            blog ? "block  duration-300" : "hidden  duration-300"
-          }`}
-        >
-          <Link to="/dashboard/blog-list">
-            <li
-              onClick={handleClick}
-              className="mt-2 flex justify-between items-center hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-            >
-              <div className="flex items-center gap-3">
-                {!isCollups && <span>Blog List</span>}
-              </div>
-            </li>
-          </Link>
-          <Link to="/dashboard/add-blog">
-            <li
-              onClick={handleClick}
-              className="mt-2 flex justify-between items-center hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-            >
-              <div className="flex items-center gap-3">
-                {!isCollups && <span>Add Blog</span>}
-              </div>
-            </li>
-          </Link>
-        </div>
-        {/* blog menu end  */}
-        {/* vdio menu start  */}
-        <li
-          className="mt-2 duration-300 flex justify-between items-center gap-3 hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-          onClick={() => setVidio(!vidio)}
-        >
-          <div className="flex items-center gap-3">
-            <LuYoutube />
-            {!isCollups && <span>Video</span>}
-          </div>
-          {vidio ? <IoIosArrowDown /> : <IoIosArrowForward />}
-        </li>
-        <div
-          className={`pl-5 transition duration-300  ${
-            vidio ? "block  duration-300" : "hidden  duration-300"
-          }`}
-        >
-          <Link to="/dashboard/vidio-list">
-            <li
-              onClick={handleClick}
-              className="mt-2 flex justify-between items-center hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-            >
-              <div className="flex items-center gap-3">
-                {!isCollups && <span>Video List</span>}
-              </div>
-            </li>
-          </Link>
-          <Link to="/dashboard/add-vidio">
-            <li
-              onClick={handleClick}
-              className="mt-2 flex justify-between items-center hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-            >
-              <div className="flex items-center gap-3">
-                {!isCollups && <span>Add Video</span>}
-              </div>
-            </li>
-          </Link>
-        </div>
-        {/* vdio menu end  */}
       </ul>
     </div>
   );

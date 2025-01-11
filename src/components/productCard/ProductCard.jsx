@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ className, img, title, price }) => {
   return (
     <div className={`${className} rounded-md shadow`}>
-      <img className="w-full h-72 mb-4 rounded-md" src={img} alt="" />
+      <img className="w-full h-64 mb-3 rounded-md" alt="" />
       <div className="p-1 lg:p-3">
         <div className="text-center ">
           <span className="mb-2 lg:mb-4 text-sm lg:text-lg text-secondary font-medium">

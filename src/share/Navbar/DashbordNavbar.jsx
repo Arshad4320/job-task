@@ -32,11 +32,14 @@ const DashbordNavbar = ({ handleClick, menuState }) => {
               onClick={handleClick}
             />
           ) : (
-            <FaRegArrowAltCircleRight
-              className="text-secondary"
-              size={24}
-              onClick={handleClick}
-            />
+            <>
+              {" "}
+              <FaRegArrowAltCircleRight
+                className="text-secondary"
+                size={24}
+                onClick={handleClick}
+              />
+            </>
           )}
           <div className="">
             {/* <div className='flex items-center border rounded-full px-2 py-1 ml-2 lg:ml-20 bg-[#ECF0F3]'>

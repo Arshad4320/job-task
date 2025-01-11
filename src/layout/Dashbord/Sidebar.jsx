@@ -1,19 +1,14 @@
 import { Link } from "react-router-dom";
+
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { LiaProductHunt } from "react-icons/lia";
-import logo from "../../assets/Logo.svg";
 import { AiOutlineHome } from "react-icons/ai";
-import { GoPeople } from "react-icons/go";
 import { useState } from "react";
-import { ImBlogger2 } from "react-icons/im";
 import { TbCategory } from "react-icons/tb";
-import { HiOutlineShoppingCart } from "react-icons/hi2";
-import { LuYoutube } from "react-icons/lu";
 import { RxDashboard } from "react-icons/rx";
 const Sidebar = ({ menuState }) => {
   const [product, setProduct] = useState(false);
   const [category, setCategory] = useState(false);
-  const [cuisine, setCuisine] = useState(false);
 
   return (
     <div
@@ -25,13 +20,6 @@ const Sidebar = ({ menuState }) => {
         <li className={`font-semibold py-3   ${!menuState && "hidden"}`}>
           <div>
             {/* <img className="w-14 h-20 mx-4" src={logo} alt="" /> */}
-
-            <Link to="/">
-              {" "}
-              <h1 className="text-2xl ml-3 text-primary uppercase">
-                Al Madh Bd
-              </h1>
-            </Link>
           </div>
         </li>
 
@@ -52,35 +40,6 @@ const Sidebar = ({ menuState }) => {
           </li>
         </Link>
 
-        {/* user menu start  */}
-        <li
-          className="mt-2 duration-300 flex justify-between items-center gap-3 hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
-          onClick={() => setCuisine(!cuisine)}
-        >
-          <div className="flex items-center gap-3">
-            <GoPeople />
-            {menuState && <span>User</span>}
-          </div>
-          {cuisine ? (
-            <IoIosArrowDown className={`${!menuState && "hidden"}`} />
-          ) : (
-            <IoIosArrowForward className={`${!menuState && "hidden"}`} />
-          )}
-        </li>
-        <div
-          className={`pl-5 transition duration-300  ${
-            cuisine ? "block  duration-300" : "hidden  duration-300"
-          }`}
-        >
-          <Link to="/dashboard/user/get-users">
-            <li className="mt-2 flex justify-between items-center hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2">
-              <div className="flex items-center gap-3">
-                {menuState && <span>User List</span>}
-              </div>
-            </li>
-          </Link>
-        </div>
-        {/******user menu end********/}
         {/* category menu start  */}
         <li
           className="mt-2 duration-300 flex justify-between items-center gap-3 hover:shadow-md cursor-pointer rounded px-2 py-1 mx-2"
