@@ -9,7 +9,7 @@ import {
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const DashbordNavbar = ({ handleClick, menuState }) => {

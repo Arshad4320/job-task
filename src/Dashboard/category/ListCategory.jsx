@@ -4,20 +4,21 @@ import { Link } from "react-router-dom";
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-import {
-  useDeleteProductMutation,
-  useGetProductQuery,
-} from "../../redux/features/product/productApi";
 import DeleteModal from "./../../components/DeleteModal";
+import {
+  useDeleteCategoryMutation,
+  useGetCategoryQuery,
+} from "../../redux/features/category/categoryApi";
 
-const ListProduct = () => {
+const ListCategory = () => {
   const [open, setOpen] = useState(null);
-  const [productDelete] = useDeleteProductMutation();
-  const { data } = useGetProductQuery();
+  const [deleteCategory] = useDeleteCategoryMutation();
+  const { data } = useGetCategoryQuery();
+  console.log(data?.data);
 
   // console.log(data?.data);
   const handleDelete = async () => {
-    const result = await productDelete(open).unwrap();
+    const result = await deleteCategory(open).unwrap();
     if (result) {
       try {
         toast.success("product deleted succefully");
@@ -36,10 +37,8 @@ const ListProduct = () => {
               <thead>
                 <tr>
                   <th className="p-2 border text-center">No</th>
-                  <th className="p-2 border text-center">Image</th>
-                  <th className="p-2 border text-center">Product Name</th>
 
-                  <th className="p-2 border text-center">Price</th>
+                  <th className="p-2 border text-center">Category Name</th>
 
                   <th className="p-2 border text-center">Action</th>
                   <th className="p-2 border text-center">Date</th>
@@ -50,19 +49,14 @@ const ListProduct = () => {
                   return (
                     <tr className=" duration-300 my-1" key={i}>
                       <td className="p-2 border text-center">{i + 1}</td>
-                      <img
-                        className="w-24 h-24 mx-auto p-1 flex justify-center"
-                        src={item?.images}
-                        alt=""
-                      />
+
                       <td className="p-2 border text-center ">
-                        {item?.productName}
+                        {item?.categoryName}
                       </td>
-                      <td className="p-2 border text-center ">{item?.price}</td>
 
                       <td className="p-2 border text-center">
                         <div className="flex items-center gap-2 justify-center p-3 rounded bg-secondary hover:bg-secondary2 ">
-                          <Link to={`/dashboard/edit-product/${item?.id}`}>
+                          <Link to={`/dashboard/edit-category/${item?.id}`}>
                             <BiSolidEdit className="text-xl text-primary" />
                           </Link>
                           <RiDeleteBin6Line
@@ -74,7 +68,7 @@ const ListProduct = () => {
 
                           {open ? (
                             <DeleteModal
-                              message={"Product"}
+                              message={"Category"}
                               handleDelete={handleDelete}
                               setDeleted={setOpen}
                             />
@@ -101,4 +95,4 @@ const ListProduct = () => {
   );
 };
 
-export default ListProduct;
+export default ListCategory;

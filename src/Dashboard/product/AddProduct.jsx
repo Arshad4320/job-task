@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { useCreateProductMutation } from "../../redux/features/product/productApi";
 import Button from "../../components/button/Button";
 
@@ -21,11 +21,11 @@ const AddProduct = () => {
       const result = await createProduct(newProduct).unwrap();
       if (result) {
         reset();
-        toast.success("Product created successfully!");
+        // toast.success("Product created successfully!");
       }
     } catch (err) {
       console.error(err);
-      toast.error("Failed to create product.");
+      // toast.error("Failed to create product.");
     }
   };
 
