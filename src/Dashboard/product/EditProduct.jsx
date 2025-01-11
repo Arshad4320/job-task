@@ -52,7 +52,7 @@ const EditProduct = () => {
     <div className=" lg:m-8">
       <h1 className="text-2xl font-bold mb-4">Edit Product</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 ">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
           <div>
             <label className="font-medium text-gray-700" htmlFor="name">
               Product Name *

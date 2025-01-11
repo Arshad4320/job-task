@@ -9,7 +9,7 @@ const About = () => {
     // <div className="grid grid-cols-2 py-6 md:py-8 lg:py-10 px-4 md:px-6 lg:px-28">
     <div className="grid grid-cols-1 lg:grid-cols-2 mb-10  px-4 md:px-6 lg:px-28 ">
       <div className="relative">
-        <div className="w-[400px] h-[400px] absolute rounded-full -z-10 bg-primary top-[33%] left-[14%]"></div>
+        <div className="w-[270px]  lg:w-[400px] h-[250px] lg:h-[400px] absolute rounded-full -z-10 bg-primary top-[33%] left-[14%]"></div>
         <img className="w-[90%] " src={img} alt="" />
       </div>
 

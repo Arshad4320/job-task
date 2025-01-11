@@ -12,7 +12,10 @@ const SeasonalFruit = () => {
       <div className="py-6 md:py-8 lg:py-10 px-4 md:px-6 lg:px-28 flex ">
         <div className="w-[60%]">
           <Title props={"Special Offer"} />
-          <Heading className={"text-8xl"} props={"Seasonal Fruit Bundle"} />
+          <Heading
+            className={"text-6xl lg:text-8xl"}
+            props={"Seasonal Fruit Bundle"}
+          />
           <h3 className="text-4xl text-secondary font-medium">
             Discount up to <span className="text-[#FF6A1A]">80% OFF</span>
           </h3>
