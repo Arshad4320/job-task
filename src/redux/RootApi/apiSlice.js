@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "http://localhost:5000/api/v1";
+const BASE_URL = "https://api-fresh-harvest.code-commando.com/api/v1";
 const customBaseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
   prepareHeaders(headers) {

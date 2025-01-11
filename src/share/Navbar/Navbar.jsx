@@ -26,9 +26,9 @@ const Navbar = () => {
               </Link>
               <Link
                 className="text-secondary font-semibold text-md p-3"
-                to="/about"
+                to="/dashboard"
               >
-                About Us
+                Dashbord
               </Link>
               <Link
                 className="text-secondary font-semibold text-md p-3"

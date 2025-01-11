@@ -2,37 +2,16 @@ import React, { useState } from "react";
 import Title from "../title/Title";
 import Heading from "../heading/Heading";
 import Pragraph from "../pragraph/Pragraph";
-import img from "../../assets/vegitable.jpg";
 import ProductCard from "../productCard/ProductCard";
-const data = [
-  {
-    id: 1,
-    img: img,
-    title: " Lorem, ipsum dolor  ",
-    price: "10",
-  },
-  {
-    id: 2,
-    img: img,
-    title: " Lorem, ipsum dolor  ",
-    price: "10",
-  },
-  {
-    id: 3,
-    img: img,
-    title: " Lorem, ipsum dolor  ",
-    price: "10",
-  },
-  {
-    id: 4,
-    img: img,
-    title: " Lorem, ipsum dolor  ",
-    price: "10",
-  },
-];
+import { useGetProductQuery } from "../../redux/features/product/productApi";
+import Button from "../button/Button";
+import { Link } from "react-router-dom";
+
 const Product = () => {
+  const { data: productItem } = useGetProductQuery();
+
   const [active, setActive] = useState(null);
-  console.log(active);
+
   const buttonData = [
     { id: 1, Name: "All" },
     { id: 2, Name: "Fruits" },
@@ -41,7 +20,7 @@ const Product = () => {
   ];
 
   return (
-    <div className="py-10 px-28">
+    <div className="py-6 md:py-8 lg:py-10 px-4 md:px-6 lg:px-28">
       <div className="flex justify-center items-center">
         <div className="text-center">
           <Title props="Our Products" />
@@ -53,7 +32,7 @@ const Product = () => {
         <div className="flex justify-center gap-2 mt-4">
           {buttonData?.map((obj) => (
             <button
-              className={`text-xl   text-center rounded-md py-2 px-3 cursor-pointer ${
+              className={`text-lg lg:text-xl   text-center rounded-md py-1 lg:py-2 px-2 lg:px-3 cursor-pointer ${
                 active === obj?.id
                   ? "  text-white bg-[#749B3F]"
                   : "  bg-white text-[#749B3F] border border-[#749B3F]"
@@ -65,16 +44,20 @@ const Product = () => {
             </button>
           ))}
         </div>
-        <div className="grid my-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {data.map((item) => {
+        <div className="grid my-10 grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+          {productItem?.data?.map((item) => {
             return (
-              <div key={item?.id}>
-                <ProductCard
-                  title={item?.title}
-                  img={item?.img}
-                  price={item?.price}
-                />
-              </div>
+              <Link key={item?.id} to={`/product/${item.id}`}>
+                <div>
+                  <ProductCard
+                    title={item?.productName}
+                    img={item?.images}
+                    price={item?.price}
+                  />
+
+                  <Button props={"Add To Cart"} />
+                </div>
+              </Link>
             );
           })}
         </div>
